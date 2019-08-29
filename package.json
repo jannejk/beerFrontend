@@ -13,7 +13,7 @@
     "react-dom": "^16.7.0-alpha.2",
     "sort-json-array": "^0.1.7"
   },
-  "homepage":"https://jannejk.github.io/beerFrontend",
+  "homepage":".",
   "scripts": {
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
