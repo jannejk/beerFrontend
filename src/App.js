@@ -205,11 +205,11 @@ handleChange = (event, activeTab) => {
     var urlEnd=activeTab;
     this.setState({url: 'https://my-json-server.typicode.com/jannejk/myjsonapi/'+urlEnd},function () {
    // console.log("URL end "+urlEnd);
-    this.getProducts();
+    //this.getProducts();//orig
   });
   
     this.setState({imgUrl: './images/'+urlEnd+'/thumb/'},function () {
-        
+      this.getProducts();
     });
 
 };
