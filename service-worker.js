@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/beerFrontend/precache-manifest.bf69e0443be77966e83962193fd28f15.js"
+  "/beerFrontend/precache-manifest.9c7dd40f1f759adc10f9ed62496e4d63.js"
 );
 
 workbox.clientsClaim();
