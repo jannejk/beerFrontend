@@ -131,7 +131,7 @@ constructor(){
    // url: 'http://localhost:3001/beers',
    
     url: 'https://my-json-server.typicode.com/jannejk/myjsonapi/beers',
-    imgUrl: 'beers/thumb/',
+    imgUrl: '/beerFrontend/beers/thumb/',
     searchString: '',
     selectedValue: "",
     activeTab: 'beers',
@@ -208,7 +208,7 @@ handleChange = (event, activeTab) => {
     this.getProducts();
   });
   
-    this.setState({imgUrl: '../images/'+urlEnd+'/thumb/'},function () {
+    this.setState({imgUrl: '..beerFrontend/images/'+urlEnd+'/thumb/'},function () {
         
     });
 
@@ -303,8 +303,8 @@ selectChange = (event) => {
               
               <Grid className='myCard' item xs={6} sm={6} md={4}>
               <div className='box' key={index}>
-              <Avatar onError={(e)=>{e.target.src="../images/beers/thumb/no-image.png"}}alt="pic" 
-                    src={"../images/"+imgUrlFill+item.images} style={Object.assign({}, avatarImageStyle)}/>
+              <Avatar onError={(e)=>{e.target.src="..beerFrontend/images/beers/thumb/no-image.png"}}alt="pic" 
+                    src={"..beerFrontend/images/"+imgUrlFill+item.images} style={Object.assign({}, avatarImageStyle)}/>
                     <p></p>
                     <Typography  variant="h1" >{item.title}</Typography>
                    

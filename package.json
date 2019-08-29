@@ -13,13 +13,17 @@
     "react-dom": "^16.7.0-alpha.2",
     "sort-json-array": "^0.1.7"
   },
+  "homepage":"https://jannejk.github.io/beerFrontend",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "react-scripts": "2.0.3"
   },
   "browserslist": [
