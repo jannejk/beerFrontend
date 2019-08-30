@@ -13,7 +13,7 @@ body {
 
 .toolBarContainer{
   max-width: 180vh !important;
-  
+  margin: auto 0;
 }
 
 .MuiInputBase-input {
@@ -34,12 +34,13 @@ body {
 .MuiAppBar-root{
   
     background-color: white !important;
+   
    /*  display: flex !important;
     justify-content: center !important; */
   //  margin-bottom: 100px !important;
 }
 .MuiToolbar-regular {
-  
+  //display: none !important;
    background-color: #212121;
   padding-bottom: 20px !important;
   // max-width: 180vh;
@@ -73,9 +74,6 @@ transition: all .5s ease;
 .containerGrid{
   max-width: 180vh;
   padding: 0;
-  
-  margin-top:100px !important;
-  // justify-content: stretch !important;
   margin: 0 auto !important;
   
   // border: 5px solid rgb(241, 11, 203);
@@ -89,14 +87,17 @@ transition: all .5s ease;
 }
 
 @media screen and (max-width: 600px) {
+  .MuiAppBar-positionSticky {
+    top: 0;
+    left: auto;
+    right: 0;
+    position: static !important;
+}
   .containerGrid {
     margin-top:30px !important;
-   
   }
   .myCard {
-   
     padding: 0px !important;
-   
   }
 }
 
@@ -131,13 +132,17 @@ transition: all .5s ease;
 //   -ms-transform: scale(1.05); /* IE 9 */ 
 //   transform: scale(1.05);
 // } 
-
+.footxt{
+  margin-bottom: -30px !important;//hack check later
+}
 .menuitem{
-  align-self: flex-end;
-  margin-top: 30px !important;
-  margin-bottom: 20px !important;
+  //align-self: center;
+ // margin-top: 30px !important;
+  //margin-bottom: 20px !important;
   //  border: 5px solid red;
   text-align: center;
+  margin: auto 0;
+  align-self: center;
   // white-space: nowrap;
 }
 @media screen and (max-width: 600px) {
@@ -149,7 +154,7 @@ transition: all .5s ease;
 .submenuitem{
  text-align: center;
  
-  // border: 5px solid rgb(179, 255, 0);
+  // border: 3px solid rgb(179, 255, 0);
 }
 i{
   color: $cardTitleFontColor;

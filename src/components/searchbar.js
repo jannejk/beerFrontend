@@ -4,11 +4,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
 
 const textboxStyle = {
-    background: '#212121',
-    borderRadius: 30,
-    borderWidth: "5px",
-    borderColor: 'red',
-    color: 'white',
+    // background: '#212121',
+    // borderRadius: 30,
+    // borderWidth: "5px",
+    // borderColor: 'red',
+    // color: 'white',
   };
 
 class SearchBar extends Component{
@@ -27,13 +27,13 @@ class SearchBar extends Component{
 
         return (
           <div>
-                    <Grid className='test'container direction="row">
-                            <Grid item item xs={12}md={3}>
-                            <TextField style={Object.assign({}, textboxStyle)}placeholder="SEARCH"
-                                 onChange={event=>this.onInputChange(event.target.value)}/>&nbsp;
+                    <Grid className='submenuitem'container direction="row"alignItems="flex-start" justify="center">
+                            <Grid item xs={6}sm={6}md={3}>
+                            <TextField className="footxt"/* style={Object.assign({}, textboxStyle)} */placeholder="SEARCH"
+                           onChange={event=>this.onInputChange(event.target.value)}/>&nbsp;
                             </Grid>
                             <Grid item>
-                            <SearchIcon  />
+                            <SearchIcon />
                             </Grid>
                     </Grid>
                     

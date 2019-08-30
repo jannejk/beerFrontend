@@ -254,8 +254,8 @@ selectChange = (event) => {
         <Toolbar >
             <Grid className='toolBarContainer'container spacing={0}>
               
-              <Grid container spacing={3}>
-                  <Grid className='menuitem' item xs={12}md={6}>
+              <Grid container spacing={0}>
+                  <Grid /* className='menuitem' */ item xs={12}md={6}>
                     <Tabs value={this.state.value} onChange={this.handleChange}style={Object.assign({}, tabStyle)}centered>
                       {options.map(item => (
                     <Tab key={item.value} label={item.name}value={item.value}/>
@@ -265,16 +265,16 @@ selectChange = (event) => {
 
                         <Grid className='menuitem' item xs={6}sm={6}md={3}>
                       
-                            <Grid container className='submenuitem' alignItems="flex-start" justify="flex-end">
+                            <Grid container className='submenuitem' alignItems="flex-start" justify="center">
                             
-                              <Grid  item xs={12}md={3}>
+                              <Grid item xs={6}sm={6}md={3}>
                             
                                   <Select 
                                     displayEmpty id="sortBy" onChange={this.selectChange} value={this.state.selectedValue}
                                     style={Object.assign({}, dropdownStyle)}>
-                                  <MenuItem value="" disabled>
-                                        <div className="myem">SORT BY</div>
-                                  </MenuItem>
+                                        <MenuItem value="" disabled>
+                                              <div className="myem">SORT BY</div>
+                                        </MenuItem>
                                     {sortOptions.map(item => (
                                       <MenuItem value={item.value}primaryText={item.name}key={item.value}>
                                         {item.name}
@@ -284,7 +284,7 @@ selectChange = (event) => {
                                 </Grid>
                               </Grid>
                         </Grid>
-                    <Grid className='menuitem' item xs={6}md={3}>
+                    <Grid className='menuitem' item xs={6}sm={6}md={3}>
                         <SearchBar onTermChange={term=>this.handleTermChange(term)}/>
                     </Grid>
              </Grid>
