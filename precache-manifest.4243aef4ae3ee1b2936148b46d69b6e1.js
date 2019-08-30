@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/beerFrontend/static/js/runtime~main.5038f279.js"
   },
   {
-    "revision": "88152793b5225c5cb398",
-    "url": "/beerFrontend/static/js/main.88152793.chunk.js"
+    "revision": "25d996bf75e3013b4798",
+    "url": "/beerFrontend/static/js/main.25d996bf.chunk.js"
   },
   {
     "revision": "5c36158952afa6bed054",
     "url": "/beerFrontend/static/js/1.5c361589.chunk.js"
   },
   {
-    "revision": "88152793b5225c5cb398",
-    "url": "/beerFrontend/static/css/main.e11d43e4.chunk.css"
+    "revision": "25d996bf75e3013b4798",
+    "url": "/beerFrontend/static/css/main.2738c8ae.chunk.css"
   },
   {
-    "revision": "d94ac16024f816bee4f6c56b01cfc956",
+    "revision": "222409bbdf996755b193b24e75822bbf",
     "url": "/beerFrontend/index.html"
   }
 ];
