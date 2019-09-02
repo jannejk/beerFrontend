@@ -10,6 +10,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {MuiThemeProvider, createMuiTheme} from "@material-ui/core"
 import Avatar from '@material-ui/core/Avatar';
+import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import EuroSymbolIcon from '@material-ui/icons/EuroSymbol';
@@ -153,27 +154,27 @@ getProducts(){
     "Accept": "application/json",
     'Content-Type': 'application/json'
     }
-})
-.then(response => { 
-  return response.json();
-})
-.then(responseData => {
-  //console.log('jep',responseData); 
-  return responseData;
-})
-.then(data => {this.setState({'items' : data}
+        })
+        .then(response => { 
+          return response.json();
+        })
+        .then(responseData => {
+          //console.log('jep',responseData); 
+          return responseData;
+        })
+        .then(data => {this.setState({'items' : data}
 
-);
-//console.log('UrlEnd: ',this.state.urlEnd);
-}
+        );
+        //console.log('UrlEnd: ',this.state.urlEnd);
+        }
 
-)
+        )
  
-.catch(err => {
-    console.log("fetch error" + err);
-});
+          .catch(err => {
+              console.log("fetch error" + err);
+          });
 
-}
+    }
 
 componentDidMount(){
   
@@ -196,8 +197,10 @@ handleTermChange(term) {
 
 
 handleChange = (event, activeTab) => {
- 
-  //console.log('active tab: '+activeTab);
+  this.setState({ activeTab: event.target.value }, function () {
+    //console.log('active tab: '+activeTab)
+  });
+  ;
 
   this.setState({ value: activeTab }, function () {
     
@@ -236,9 +239,9 @@ selectChange = (event) => {
 
   render() {
     
-    const {selectedValue}=this.state;
-    const {classes} = this.props;
-    const {activeTab}=this.state;
+    // const {selectedValue}=this.state;
+    // const {classes} = this.props;
+    // const {activeTab}=this.state.activeTab;
     let imgUrlFill=this.state.imgUrl;
     const { options, value } = this.state;
     const { sortOptions, sortValue } = this.state;
@@ -251,27 +254,24 @@ selectChange = (event) => {
       <div className='App'>
     
       <AppBar position="sticky" >
+     
         <Toolbar >
-            <Grid className='toolBarContainer'container spacing={0}>
+            {/* <Grid className='toolBarContainer'container spacing={0}> */}
               
-              <Grid container spacing={0}>
-                  <Grid /* className='menuitem' */ item xs={12}md={6}>
-                    <Tabs value={this.state.value} onChange={this.handleChange}style={Object.assign({}, tabStyle)}centered>
+              <Grid className="menurow"container spacing={0}>
+                  <Grid /* className='menuitem' */ item xs={12}md={6}sm={12}>
+                    <Tabs value={value} onChange={this.handleChange}/* style={Object.assign({}, tabStyle)} */centered >
                       {options.map(item => (
                     <Tab key={item.value} label={item.name}value={item.value}/>
                     ))}
                     </Tabs>
                   </Grid>
-
+                
                         <Grid className='menuitem' item xs={6}sm={6}md={3}>
                       
-                            <Grid container className='submenuitem' alignItems="flex-start" justify="center">
-                            
-                              <Grid item xs={6}sm={6}md={3}>
-                            
-                                  <Select 
-                                    displayEmpty id="sortBy" onChange={this.selectChange} value={this.state.selectedValue}
-                                    style={Object.assign({}, dropdownStyle)}>
+                           
+                              <Select className="myDrop" displayEmpty id="sortBy" onChange={this.selectChange} value={this.state.selectedValue}>
+                                 
                                         <MenuItem value="" disabled>
                                               <div className="myem">SORT BY</div>
                                         </MenuItem>
@@ -281,16 +281,17 @@ selectChange = (event) => {
                                       </MenuItem>
                                     ))}
                                   </Select>
-                                </Grid>
-                              </Grid>
+                                 
                         </Grid>
+                       
                     <Grid className='menuitem' item xs={6}sm={6}md={3}>
                         <SearchBar onTermChange={term=>this.handleTermChange(term)}/>
                     </Grid>
+                 
              </Grid>
-          </Grid>
+          {/* </Grid> */}
         </Toolbar>
-        
+       
       </AppBar>
       
   
@@ -301,7 +302,7 @@ selectChange = (event) => {
             return(
             
               
-              <Grid className='myCard' item xs={6} sm={6} md={4}>
+              <Grid className='myCard' item xs={12} sm={6} md={4}>
               <div className='box' key={index}>
               <Avatar onError={(e)=>{e.target.src="./images/beers/thumb/no-image.png"}}alt="nopic" 
                     src={"./images/"+imgUrlFill+item.images} style={Object.assign({}, avatarImageStyle)}/>
@@ -312,14 +313,14 @@ selectChange = (event) => {
                     
                     <Typography  component="p" >{item.description}</Typography><br/>
                     
-                    <Grid className='test'container direction="row">
+                    <Grid className='boxcontent'container direction="row">
                         <Grid item>
                         <EuroSymbolIcon/>&nbsp; 
                         </Grid>
                         <Grid item>
                         <Typography  component="p" >Price: {item["price-range"]}</Typography>
                         </Grid>
-                        <Grid className='test' container direction="row" alignItems="center">
+                        <Grid className='boxcontent' container direction="row" alignItems="center">
                         <Grid item>
                         &nbsp;&nbsp;<StarsIcon/>&nbsp;
                         </Grid>

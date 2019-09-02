@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
-
+import InputAdornment from "@material-ui/core/InputAdornment";
 const textboxStyle = {
     // background: '#212121',
     // borderRadius: 30,
@@ -27,15 +27,25 @@ class SearchBar extends Component{
 
         return (
           <div>
-                    <Grid className='submenuitem'container direction="row"alignItems="flex-start" justify="center">
-                            <Grid item xs={6}sm={6}md={3}>
-                            <TextField className="footxt"/* style={Object.assign({}, textboxStyle)} */placeholder="SEARCH"
-                           onChange={event=>this.onInputChange(event.target.value)}/>&nbsp;
-                            </Grid>
-                            <Grid item>
-                            <SearchIcon />
-                            </Grid>
-                    </Grid>
+                    {/* <Grid className='submenuitem'container direction="row"alignItems="flex-start" justify="center"> */}
+                            {/* <Grid item xs={6}sm={6}md={3}> */}
+                            
+                            <TextField InputProps={{
+                                                  endAdornment: (
+                                                    <InputAdornment>
+                                                    
+                                                        <SearchIcon />
+                                                    
+                                                    </InputAdornment>
+                                                  )
+                                                }}placeholder="SEARCH"
+                               onChange={event=>this.onInputChange(event.target.value)}/>&nbsp;
+                            {/* </Grid> */}
+                            {/* <Grid item> */}
+                            {/* <SearchIcon className="myicon"/> */}
+                          
+                            {/* </Grid> */}
+                    {/* </Grid> */}
                     
         
           </div>

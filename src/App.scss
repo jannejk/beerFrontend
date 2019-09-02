@@ -5,7 +5,9 @@ $cardTitleFontColor: #777777;
 $selectedTabColor:#F6F6F6;
 $inactiveTabColor:#777777;
 
-
+html, body, .menurow {
+  height: 100% !important;
+}
 body {
   
    background-color: #ffffff;
@@ -56,10 +58,10 @@ body {
   font-weight: bolder;
   font-size: 1.8rem !important;
   -webkit-transition: all .5s ease;
--moz-transition: all .5s ease;
--ms-transition: all .5s ease;
--o-transition: all .5s ease;
-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
 
   //text-shadow: 0px 1px, 1px 0px, 1px 1px;
 }
@@ -78,7 +80,7 @@ transition: all .5s ease;
   
   // border: 5px solid rgb(241, 11, 203);
 }
-.test{
+.boxcontent{
   // border: 5px solid rgb(241, 11, 203);
   display: flex;
   justify-content: center;
@@ -86,6 +88,13 @@ transition: all .5s ease;
   
 }
 
+@media (max-width: 400px) { 
+  .myDrop {
+   // border: 1px solid rgb(241, 11, 203);
+    margin-top: -45px !important; //hack to align dropdown
+    align-self: flex-end !important;
+   }
+ }
 @media screen and (max-width: 600px) {
   .MuiAppBar-positionSticky {
     top: 0;
@@ -99,28 +108,29 @@ transition: all .5s ease;
   .myCard {
     padding: 0px !important;
   }
+  
 }
 
 .myCard {
-  //  border: 5px solid rgb(76, 0, 255);
+   // border: 5px solid rgb(76, 0, 255);
   padding: 50px;
   
 }
 
 .box {
  height: 100%;
-  // border: 1px solid rgba(255, 255, 0, 0.507);
+   //border: 1px solid rgba(255, 255, 0, 0.507);
 //  background-color:rgba(0, 0, 0, 0.034);
- color: rgb(41, 41, 41);
-  border-radius: 20px;
-  padding: 20px;
-  // box-shadow: 1px 1px 8px #b9b9b9, 4px 4px 0px rgba(0,0,0,0.1);
+ //color: rgb(41, 41, 41);
+  //border-radius: 20px;
+  // padding: 20px;
+   //box-shadow: 1px 1px 1px #b9b9b9, 1px 1px 0px rgba(0,0,0,0.1);
 //  margin: 20px auto;
--webkit-transition: all .5s ease;
--moz-transition: all .5s ease;
--ms-transition: all .5s ease;
--o-transition: all .5s ease;
-transition: all .5s ease;
+// -webkit-transition: all .5s ease;
+// -moz-transition: all .5s ease;
+// -ms-transition: all .5s ease;
+// -o-transition: all .5s ease;
+// transition: all .5s ease;
 
  
 }
@@ -132,9 +142,7 @@ transition: all .5s ease;
 //   -ms-transform: scale(1.05); /* IE 9 */ 
 //   transform: scale(1.05);
 // } 
-.footxt{
-  margin-bottom: -150px !important;//hack check later
-}
+
 .menuitem{
   //align-self: center;
  // margin-top: 30px !important;
@@ -150,18 +158,30 @@ transition: all .5s ease;
     margin-top: 20px !important;
     margin-bottom: 0px !important;
   }
+  .box{
+    padding: 20px;
+  }
+  // .submenuitem, .foo{
+    
+    
+  //     border: 1px solid rgb(255, 0, 191) !important;
+  //  }
 }
-.submenuitem{
- text-align: center;
- 
-  // border: 3px solid rgb(179, 255, 0);
+// .submenuitem{
+//  text-align: left;
+//  flex-wrap: wrap;
+//    border: 1px solid rgb(179, 255, 0);
+// }
+.myicon{
+  margin: 0 auto !important;
 }
+
 i{
   color: $cardTitleFontColor;
 }
 .myem{
   color:$primaryFontColor;
-  font-weight: bolder !important;
+  //font-weight: bolder !important;
 }
 
 .mySelect{
