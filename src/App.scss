@@ -88,11 +88,11 @@ body {
   
 }
 
-@media (max-width: 400px) { 
+@media (max-width: 450px) { 
   .myDrop {
    // border: 1px solid rgb(241, 11, 203);
-    margin-top: -45px !important; //hack to align dropdown
-    align-self: flex-end !important;
+    margin-top: -55px !important; //hack to align dropdown
+    //align-self: flex-start !important;
    }
  }
 @media screen and (max-width: 600px) {
