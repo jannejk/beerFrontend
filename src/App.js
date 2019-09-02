@@ -62,9 +62,11 @@ const THEME = createMuiTheme({
   overrides: {
     
     MuiSelect: {
+      
         'root': {                        
                 color: '#9B8449',
                 
+               
                 
         },
         icon: {
@@ -166,6 +168,9 @@ getProducts(){
 
         );
         //console.log('UrlEnd: ',this.state.urlEnd);
+         console.log('items: ',this.state.items);
+        // this.setState({imgUrl: {this.state.items.map(function(item, index){});
+         console.log('ddfdfdf: ',this.state.imgUrl);
         }
 
         )
@@ -269,10 +274,10 @@ selectChange = (event) => {
                     ))}
                     </Tabs>
                   </Grid>
-                
-                        <Grid className='menuitem' item xs={6}sm={6}md={3}>
-                      
-                           
+                  {/* <div className='texsto'> */}
+                        <Grid className='menuitem' item xs={12}sm={6}md={3}>
+                       
+                     
                               <Select className="myDrop" displayEmpty id="sortBy" onChange={this.selectChange} value={this.state.selectedValue}>
                                  
                                         <MenuItem value="" disabled>
@@ -286,11 +291,14 @@ selectChange = (event) => {
                                   </Select>
                                  
                         </Grid>
-                       
-                    <Grid className='menuitem' item xs={6}sm={6}md={3}>
+                        {/* </div> */}
+                      
+                    <Grid className='menuitem' item xs={12}sm={6}md={3}>
+                    {/* <div className='testo'> */}
                         <SearchBar onTermChange={term=>this.handleTermChange(term)}/>
+                        {/* </div> */}
                     </Grid>
-                 
+                
              </Grid>
           {/* </Grid> */}
         </Toolbar>
@@ -307,7 +315,7 @@ selectChange = (event) => {
               
               <Grid className='myCard' item xs={12} sm={6} md={4}>
               <div className='box' key={index}>
-              <Avatar src={"./images/"+imgUrlFill+item.images} onError={(e)=>{e.target.src="./images/beers/thumb/no-image.png"}}alt="nopic" 
+              <Avatar src={"./images/"+imgUrlFill+[item.images]} onError={(e)=>{e.target.src="./images/beers/thumb/no-image.png"}}alt="nopic" 
                     style={Object.assign({}, avatarImageStyle)}/>
                     <p></p>
                     <Typography  variant="h1" >{item.title}</Typography>
