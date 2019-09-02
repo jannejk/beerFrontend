@@ -308,7 +308,7 @@ selectChange = (event) => {
               <Grid className='myCard' item xs={12} sm={6} md={4}>
               <div className='box' key={index}>
               <Avatar onError={(e)=>{e.target.src="./images/beers/thumb/no-image.png"}}alt="nopic" 
-                    src={"./images/"+imgUrlFill+item.images} style={Object.assign({}, avatarImageStyle)}/>
+                    src={"./images/"+imgUrlFill+item.images[0]} style={Object.assign({}, avatarImageStyle)}/>
                     <p></p>
                     <Typography  variant="h1" >{item.title}</Typography>
                    
