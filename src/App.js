@@ -197,6 +197,9 @@ handleTermChange(term) {
 
 
 handleChange = (event, activeTab) => {
+  this.setState({imgUrl: /* './images/'+ */urlEnd+'/thumb/'},function () {
+     console.log("imgUrl on  "+this.state.imgUrl);
+  });
   this.setState({ activeTab: event.target.value }, function () {
     //console.log('active tab: '+activeTab)
   });
