@@ -21,32 +21,19 @@ body {
 .MuiInputBase-input {
   font: inherit;
   color: #FCFCFC !important;
-  // width: 100%;
-  // border: 0;
-  // height: 1.1875em;
-  // margin: 0;
-  // display: block;
-  // padding: 6px 0 7px;
-  // min-width: 0;
-  // background: none;
-  // box-sizing: content-box;
-  // -webkit-tap-highlight-color: transparent;
+ 
 }
 
 .MuiAppBar-root{
   
-    background-color: white !important;
+  background-color: white !important;
    
-   /*  display: flex !important;
-    justify-content: center !important; */
-  //  margin-bottom: 100px !important;
 }
 .MuiToolbar-regular {
-  //display: none !important;
-   background-color: #212121;
+ 
+  background-color: #212121;
   padding-bottom: 20px !important;
-  // max-width: 180vh;
-  // margin: auto 0 !important;
+  
   
 }
 .MuiMenu-list {
@@ -88,14 +75,6 @@ body {
   
 }
 
-@media (max-width: 450px) { 
-  .myDrop {
-    //vertical-align: top !important;
-   // border: 1px solid rgb(241, 11, 203);
-    //margin-top: -55px !important; //hack to align dropdown
-    //align-self: flex-start !important;
-   }
- }
 @media screen and (max-width: 600px) {
   .MuiAppBar-positionSticky {
     top: 0;
@@ -145,37 +124,24 @@ body {
 // } 
 
 .menuitem{
-  //align-self: center;
- // margin-top: 30px !important;
-  //margin-bottom: 20px !important;
   //  border: 5px solid red;
   text-align: center;
   margin: auto 0;
   align-self: center;
-  
-  // white-space: nowrap;
 }
 @media screen and (max-width: 600px) {
   .menuitem {
-    margin-top: 20px !important;
-    margin-bottom: 0px !important;
-    align-self: flex-start;
-    text-align: left;
+     margin-top: 20px !important;
+     margin-bottom: -20px !important;
+     text-align: center;
+     height: 50px !important; //fix align issue
   }
   .box{
     padding: 20px;
   }
-  // .submenuitem, .foo{
-    
-    
-  //     border: 1px solid rgb(255, 0, 191) !important;
-  //  }
+  
 }
-// .submenuitem{
-//  text-align: left;
-//  flex-wrap: wrap;
-//    border: 1px solid rgb(179, 255, 0);
-// }
+
 .myicon{
   margin: 0 auto !important;
 }
@@ -185,7 +151,7 @@ i{
 }
 .myem{
   color:$primaryFontColor;
-  //font-weight: bolder !important;
+  
 }
 
 .mySelect{

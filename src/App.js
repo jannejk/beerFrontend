@@ -10,7 +10,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {MuiThemeProvider, createMuiTheme} from "@material-ui/core"
 import Avatar from '@material-ui/core/Avatar';
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import EuroSymbolIcon from '@material-ui/icons/EuroSymbol';
@@ -247,9 +246,7 @@ selectChange = (event) => {
 
   render() {
     
-    // const {selectedValue}=this.state;
-    // const {classes} = this.props;
-    // const {activeTab}=this.state.activeTab;
+    
     let imgUrlFill=this.state.imgUrl;
     const { options, value } = this.state;
     const { sortOptions, sortValue } = this.state;
@@ -264,21 +261,18 @@ selectChange = (event) => {
       <AppBar position="sticky" >
      
         <Toolbar >
-            {/* <Grid className='toolBarContainer'container spacing={0}> */}
-              
               <Grid className="menurow"container spacing={0}>
-                  <Grid /* className='menuitem' */ item xs={12}md={6}sm={12}>
-                    <Tabs value={value} onChange={this.handleChange}/* style={Object.assign({}, tabStyle)} */centered >
+                  <Grid item xs={12}md={6}sm={12}>
+                    <Tabs value={value} onChange={this.handleChange}centered >
                       {options.map(item => (
                     <Tab key={item.value} label={item.name}value={item.value}/>
                     ))}
                     </Tabs>
                   </Grid>
-                  {/* <div className='texsto'> */}
-                        <Grid className='menuitem' item xs={12}sm={6}md={3}>
+                  
+                        <Grid className='menuitem' item xs={6}sm={6}md={3}>
                        
-                     
-                              <Select className="myDrop" displayEmpty id="sortBy" onChange={this.selectChange} value={this.state.selectedValue}>
+                              <Select displayEmpty id="sortBy" onChange={this.selectChange} value={this.state.selectedValue}>
                                  
                                         <MenuItem value="" disabled>
                                               <div className="myem">SORT BY</div>
@@ -291,22 +285,22 @@ selectChange = (event) => {
                                   </Select>
                                  
                         </Grid>
-                        {/* </div> */}
+                    
                       
-                    <Grid className='menuitem' item xs={12}sm={6}md={3}>
-                    {/* <div className='testo'> */}
+                    <Grid className='menuitem' item xs={6}sm={6}md={3}>
+                   
                         <SearchBar onTermChange={term=>this.handleTermChange(term)}/>
-                        {/* </div> */}
+                      
                     </Grid>
-                
+                   
              </Grid>
-          {/* </Grid> */}
+        
         </Toolbar>
        
       </AppBar>
       
   
-  <Grid className='containerGrid' container justify={'center'} align={'center'}/* spacing={"0"} */mx="auto">
+  <Grid className='containerGrid' container justify={'center'} align={'center'}mx="auto">
  
           {this.state.items.map(function(item, index){
             
@@ -315,7 +309,7 @@ selectChange = (event) => {
               
               <Grid className='myCard' item xs={12} sm={6} md={4}>
               <div className='box' key={index}>
-              <Avatar src={"./images/"+imgUrlFill+[item.images]} onError={(e)=>{e.target.src="./images/beers/thumb/no-image.png"}}alt="nopic" 
+              <Avatar src={"./images/"+imgUrlFill+item.images} onError={(e)=>{e.target.src="./images/beers/thumb/no-image.png"}}alt="nopic" 
                     style={Object.assign({}, avatarImageStyle)}/>
                     <p></p>
                     <Typography  variant="h1" >{item.title}</Typography>

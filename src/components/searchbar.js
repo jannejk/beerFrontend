@@ -23,36 +23,14 @@ class SearchBar extends Component{
     }
 
     render(){
-        
-
+ 
         return (
-          <div>
-                    {/* <Grid className='submenuitem'container direction="row"alignItems="flex-start" justify="center"> */}
-                            {/* <Grid item xs={6}sm={6}md={3}> */}
-                            
-                            <TextField InputProps={{
-                                                  endAdornment: (
-                                                    <InputAdornment>
-                                                    
-                                                        <SearchIcon />
-                                                    
-                                                    </InputAdornment>
-                                                  )
-                                                }}placeholder="SEARCH"
-                               onChange={event=>this.onInputChange(event.target.value)}/>&nbsp;
-                            {/* </Grid> */}
-                            {/* <Grid item> */}
-                            {/* <SearchIcon className="myicon"/> */}
-                          
-                            {/* </Grid> */}
-                    {/* </Grid> */}
-                    
-        
-          </div>
-
-
-        );
-        }
+                 
+          <TextField InputProps={{endAdornment: (<InputAdornment>  <SearchIcon />  </InputAdornment> ) }}placeholder="SEARCH"
+          onChange={event=>this.onInputChange(event.target.value)}/>                              
+         
+            );
+          }
     
 }
 export default SearchBar;
